@@ -33,7 +33,7 @@ describe('Very Simple To Do App', function main() {
 
   it('should load successfully', () => axios.get(url).then(r => expect(r.status === 200)));
 
-  it('should include textarea element with class create-todo-text for the user to enter todo text', () =>
+  xit('should include textarea element with class create-todo-text for the user to enter todo text', () =>
     nightmare
       .goto(url)
       .react.findAll('textarea.create-todo-text')
@@ -44,7 +44,7 @@ describe('Very Simple To Do App', function main() {
       })
   );
 
-  it('should add todo item with priority', () =>
+  xit('should add todo item with priority', () =>
     nightmare
       .goto(url)
       .select('select.create-todo-priority', '1')
@@ -61,7 +61,7 @@ describe('Very Simple To Do App', function main() {
       })
   );
 
-  it('should show todo item with edit and delete', () =>
+  xit('should show todo item with edit and delete', () =>
     nightmare
       .goto(url)
       .select('select.create-todo-priority', '1')
@@ -79,7 +79,7 @@ describe('Very Simple To Do App', function main() {
       })
   );
 
-  it('should allow to edit a todo item by clicking .edit-todo of a todo element', () =>
+  xit('should allow to edit a todo item by clicking .edit-todo of a todo element', () =>
     nightmare
       .goto(url)
       .select('select.create-todo-priority', '1')
@@ -95,7 +95,7 @@ describe('Very Simple To Do App', function main() {
       .then(finalValue => expect(finalValue).to.contain('UPDATED'))
   );
 
-  it('should allow to delete a todo item by clicking .delete-todo of a todo element', () =>
+  xit('should allow to delete a todo item by clicking .delete-todo of a todo element', () =>
     nightmare
       .goto(url)
       .select('select.create-todo-priority', '1')
