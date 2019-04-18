@@ -1,13 +1,17 @@
-import React, { Component } from "react";
-import Alert from "./alert";
+import React, { Component } from 'react';
+import Alert from './alert';
 
 class App extends Component {
   constructor(props) {
     super(props);
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var dayOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     this.state = {
-      text: "",
-      priority: "",
+      text: '',
+      priority: '',
       todos: [],
+      month: months[new Date().getMonth()],
+      day: dayOfWeek[new Date().getDay()],
     };
 
     this.count = 0;
@@ -40,8 +44,8 @@ class App extends Component {
       id: this.count++,
       text: userText,
       priority: userPriority,
-      isEditing: false,
-    }
+      isEditing: false
+    };
 
     allTodos.push(newTodo);
 
@@ -51,141 +55,151 @@ class App extends Component {
   }
 
   switchEdit(id, payload) {
-    console.log({payload})
+    console.log({ payload });
 
-    //Creat a copy of todos
-    var allTodos = this.state.todos;
+    // Creat a copy of todos
+    const allTodos = this.state.todos;
 
-    // figure out (index) how to find ID in todos 
-    var index = allTodos.findIndex((todo) => {
+    // figure out (index) how to find ID in todos
+    const index = allTodos.findIndex((todo) => {
       if (todo.id === id) return true;
-    })
+    });
 
-
-    //update allTodos[index].isEditing to true
+    // update allTodos[index].isEditing to true
     allTodos[index].isEditing = true;
 
-    //Update todos in state with allTodos copy
+    // Update todos in state with allTodos copy
     this.setState({
       todos: allTodos
     });
   }
 
   onSaved(id, newText, newPriority) {
+    // Creat a copy of todos
+    const allTodos = this.state.todos;
 
-    //Creat a copy of todos
-    var allTodos = this.state.todos;
-
-    // figure out (index) how to find ID in todos 
-    var index = allTodos.findIndex((todo) => {
+    // figure out (index) how to find ID in todos
+    const index = allTodos.findIndex((todo) => {
       if (todo.id === id) return true;
-    })
+    });
 
-
-    //update allTodos[index].isEditing to true
+    // update allTodos[index].isEditing to true
     allTodos[index].isEditing = false;
     allTodos[index].text = newText;
     allTodos[index].priority = newPriority;
 
-    //Update todos in state with allTodos copy
+    // Update todos in state with allTodos copy
     this.setState({
       todos: allTodos
     });
-
   }
 
   onDelete(id) {
-    
-        //Creat a copy of todos
-        const index = this.state.todos.findIndex((todo) => todo.id === id);
-        var allTodos = this.state.todos;
-        allTodos.splice(index, 1);
-    
-    
-        this.setState({
-          todos: allTodos
-        });
-    
-      }
-    
+    // Creat a copy of todos
+    const index = this.state.todos.findIndex(todo => todo.id === id);
+    const allTodos = this.state.todos;
+    allTodos.splice(index, 1);
 
+    this.setState({
+      todos: allTodos
+    });
+  }
 
 
   render() {
     return (
-      <div className="container">
-        <div className="banner">
-          <h1 className="bannerTitle">Very Simple Todo App</h1>
-          <p className="bannerText">Track all of the things</p>
-          <br />
+      <div className='container'>
+        <div className='banner'>
+          <h1>Seize The Day</h1>
+          <p>Track all your tasks on this simple and easy to-do app!</p>
         </div>
-
-        <div className="boxLeft">
-          <div className="newToDo">Add New Todo</div>
-          <div className="toDoBoxBottom">
-            <h4 className="card-title">I want to..</h4>
-            <textarea
-              cols="40"
-              rows="5"
-              name="myname"
-              onChange={this.handleText}
-            />
-
-            <h4 className="card-title">How much of a priority is this?</h4>
-
-            <div className="form-check" id="priorities">
-              <div className="high">
-                <label className="form-check-label">
-                  <input
-                    type="radio"
-                    name="priority"
-                    value="high"
-                    className="form-check-input"
-                    onClick={this.handlePriority}
-                  />High
-                </label>
+        <div className='to-do'>
+        <div className="left">
+          <div id='sticky-note'>
+            <div className='add-new'>
+              <h4 className='card-title'>I need to:</h4>
+              <textarea
+                placeholder='get groceries'
+                cols='40'
+                rows='5'
+                name='myname'
+                onChange={ this.handleText }
+              />
+              <h4 className='card-title'>Priority:</h4>
+              <div className='form-check' id='priorities'>
+                <div className='high'>
+                  <label className='form-check-label'>
+                    <input
+                      type='radio'
+                      name='priority'
+                      value='high'
+                      className='form-check-input'
+                      onClick={ this.handlePriority }
+                    />
+                    High
+                  </label>
+                </div>
+                <div className='medium'>
+                  <label className='form-check-label'>
+                    <input
+                      type='radio'
+                      name='priority'
+                      value='medium'
+                      className='form-check-input'
+                      onClick={ this.handlePriority }
+                    />
+                    Medium
+                  </label>
+                </div>
+                <div className='low'>
+                  <label className='form-check-label'>
+                    <input
+                      type='radio'
+                      name='priority'
+                      value='low'
+                      className='form-check-input'
+                      onClick={ this.handlePriority }
+                    />
+                    Low
+                  </label>
+                </div>
               </div>
-              <div className="medium">
-                <label className="form-check-label">
-                  <input
-                    type="radio"
-                    name="priority"
-                    value="medium"
-                    className="form-check-input"
-                    onClick={this.handlePriority}
-                  />Medium
-                </label>
-              </div>
-              <div className="low">
-                <label className="form-check-label">
-                  <input
-                    type="radio"
-                    name="priority"
-                    value="low"
-                    className="form-check-input"
-                    onClick={this.handlePriority}
-                  />
-                  Low
-                </label>
+              <div className='add-button'>
+                <button type='calculate' className='add' name='submit' onClick={ this.handleTodo }>
+                  <i className='fa fa-plus' /><span>Add</span>
+                </button>
               </div>
             </div>
-            <br />
-            <div className="calculateClass">
-              <button type="calculate" name="submit" onClick={this.handleTodo}>
-                Add
-              </button>
+            <div className='top'>
+          <a href='#'>
+            <i className='fa fa-arrow-circle-o-up' aria-hidden='true' />back to the top
+          </a>
+        </div>
+          </div>
+          </div>
+          <div className="right">
+          <div className='date-title'>{this.state.day}, {this.state.month} {(new Date().getDate())}, {(new Date().getFullYear())}
             </div>
+          <div className='list'>
+            {this.state.todos.map((todo, index) => (
+              <Alert
+                onEdit={ this.switchEdit }
+                todo={ todo }
+                key={ index }
+                todoId={ todo.id }
+                onSaved={ this.onSaved }
+                onDelete={ this.onDelete }
+              />
+              ))}
+              <div className='bottom'>
+            <a href='#'>
+              <i className='fa fa-arrow-circle-o-up' aria-hidden='true' />back to the top
+            </a>
+          </div>
+          </div>
           </div>
         </div>
-
-        <div className="boxRight">
-          <div className="viewToDoRight">View Todos</div>
-          <br />
-            {this.state.todos.map((todo, index) => {
-              return <Alert onEdit={this.switchEdit} todo={todo} key={index} todoId={todo.id} onSaved={this.onSaved} onDelete={this.onDelete} />;
-            })}
-          </div>
-      </div> //container
+      </div>
     );
   }
 }

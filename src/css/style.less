@@ -1,115 +1,592 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('your/path/fontawesome-webfont.eot?v=4.7.0');
+  src: url('your/path/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+    url('your/path/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+    url('your/path/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  background-image: url("https://get.pxhere.com/photo/sand-board-wood-texture-floor-pattern-office-brown-soil-empty-business-material-surface-blank-background-wooden-wallpaper-flat-backdrop-flooring-clipboard-notice-board-grass-family-laminate-flooring-bulletin-cork-board-corkboard-1141010.jpg");
+  background: url(../img/paper-bg-b.png);
+  background-size: cover;
 }
 
-.no-padding {
-  padding: 0 !important;
+* {
+  box-sizing: border-box;
 }
 
-.no-margin {
-  margin: 0 !important;
-}
-
-.white {
-  color: white !important;
-}
-
-.strike-through {
-  text-decoration: line-through;
-}
-
-textarea {
+.container {
   width: 100%;
-  max-width: 100%;
-  min-height: 8em;
-  max-height: 16em;
+  padding: 25px 20px 0;
+}
+
+h4 {
+  font-size: 16px;
+  color: #898989;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+input[type="radio"] {
+  margin: 0px 4px 0px 0px;
 }
 
 strong + small {
     display: block;
 }
 
-input[type=checkbox] {
-  margin-right: 1em;
-}
-
-div.pull-right a {
-  margin-left: 1em;
-}
-
 .banner {
-  margin-top: 4px;
+  margin-top: 15px;
   margin-bottom: 2px;
 }
 
-.bannerTitle {
-  font-size: 55px;
-  font-style: bold;
-  font-family: 'Gloria Hallelujah';
+.banner h1 {
+  font-size: 75px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
+  color: #fdfabf;
+  letter-spacing: 4px;
+  margin: 0;
+  text-shadow:
+      3px 3px 0 #898989,
+    -1px -1px 0 #898989,
+     1px -1px 0 #898989,
+     -1px 1px 0 #898989,
+      1px 1px 0 #898989;
 }
 
-.bannerText {
-  font-size: 24px;
-  font-family: 'Gloria Hallelujah';
-  text-align: center;
-}
-
-.boxLeft {
-background: #ffffbd;
-border: 2px solid white;
-float: left; 
-width: 35%;
-}
-
-.newToDo {
-  background: white;
-  font-family: 'Gloria Hallelujah';
-  font-size: 24px; 
-  font-style: bold; 
-}
-
-.toDoBoxBottom {
+.banner p {
   font-size: 16px;
-  font-family: 'Gloria Hallelujah';
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-weight: 100;
+  color: #505050;
+  letter-spacing: 1px;
+  line-height: 50px;
+}
+
+.to-do {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.left {
+  width: 500px;
+}
+#sticky-note {
+background: url(../img/sticky-notes.png);
+background-size: cover;
+width: 500px;
+flex: 0 1 500px;
+height: 475px;
+position: fixed;
+top: 160px;
+z-index: 3;
+
+}
+.add-new {
   padding-left: 3px;
   padding-right: 3px;
   padding-bottom: 3px;
+  width: 270px;
+  position: absolute;
+  top: 120px;
+  left: 110px;
 }
 
-.boxRight {
-  background: #ffffbd; 
+textarea {
+  background: transparent;
   font-family: 'Gloria Hallelujah';
-  border: 2px solid white;
-  float: right; 
-  width: 60%;
-  }
-  
-  .viewToDoRight {
-    background: white;
-    font-family: 'Gloria Hallelujah';
-    font-size: 24px; 
-    font-style: bold;
-  }
-  
-  .toDoBoxBottomRight {
+  outline: none;
+  border: none;
+  max-height: 125px;
+  min-height: 50px;
+  font-size: 22px;
+  width: 100%;
+  color: #505050;
+}
+
+textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  opacity: 0.3;
+}
+textarea::-moz-placeholder { /* Firefox 19+ */
+  opacity: 0.3;
+}
+textarea:-ms-input-placeholder { /* IE 10+ */
+  opacity: 0.3;
+}
+textarea:-moz-placeholder { /* Firefox 18- */
+  opacity: 0.3;
+}
+
+.add-button, .calculate-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.add, .calculate {
+  font-family: 'Raleway', sans-serif;
+  text-transform: lowercase;
+  display: block;
+  padding: 4px 18px;
+  color :#898989;
+  background: transparent;
+  font-size: 16px;
+  border: 2px solid #898989;
+  opacity: .7;
+  -webkit-box-shadow: 0 8px 6px -6px #505050;
+  -moz-box-shadow: 0 8px 6px -6px #505050;
+       box-shadow: 0 8px 6px -6px #505050;
+}
+
+.add:hover, .calculate:hover {
+  transition: 400ms;
+  border: 2px solid #282828;
+  color: #282828;
+  font-size: 16px;
+}
+
+.add:focus, .calculate:hover {
+  outline: none;
+}
+
+.fa {
+  margin-right: 7px;
+}
+
+.top {
+  font-size: 14px;
+  text-decoration: none;
+  bottom: 17px;
+  left: 266px;
+  position: absolute;
+  transform: rotate(2deg);
+    /* Safari */
+    -webkit-transform: rotate(2deg);
+    /* Firefox */
+    -moz-transform: rotate(2deg);
+    /* IE */
+    -ms-transform: rotate(2deg);
+    /* Opera */
+    -o-transform: rotate(2deg);
+}
+
+a {
+  color: #898989;
+  font-family: 'Raleway', sans-serif;
+}
+
+a:hover {
+  color: #282828;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  text-decoration: none;
+}
+
+a:active {
+  color: #505050;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  text-decoration: none;
+}
+
+.right {
+  flex: 0 1 55%;
+  padding: 0 30px;
+}
+
+  .date-title {
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
-    font-family: 'Gloria Hallelujah';
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-bottom: 3px; 
+    text-align: center;
+    color: #505050;
+    letter-spacing: 1px;
+    padding: 18px 0px 18px 20px;
+    background: url(../img/pencil4.png) no-repeat;
+    background-size: 100% 100%;
+    opacity: .8;
+    margin-bottom: 10px;
+    min-width: 415px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+
+}
+
+
+  // .toDoBoxBottomRight {
+  //   font-size: 16px;
+  //   font-family: 'Gloria Hallelujah';
+  //   padding-left: 3px;
+  //   padding-right: 3px;
+  //   padding-bottom: 3px;
+  // }
+
+#priorities {
+    font-size: 16px;
+    display: flex;
+    font-family: 'Gloria Hallelujah', cursive;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#priorities input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -o-appearance: none;
+  background: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  outline: none;
+  border: 2px solid #898989;
+  padding: 0px !important;
+  margin-top: 0px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+#priorities input[type="radio"]:checked:before {
+  background: #505050;
+}
+
+#priorities input[type="radio"]:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.high {
+  color:  rgb(255,0,0);
+  margin-right: 27px;
+}
+
+.medium {
+  color:  rgb(255,165,0);
+  margin-right: 27px;
+}
+
+.low {
+  color:rgb(0,128,0);
+}
+
+.list {
+  padding: 0px 30px;
+  margin-right: 20px;
+}
+.alert {
+  color: #505050;
+  font-family: 'Gloria Hallelujah', cursive;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 15px 85px 15px 15px;
+  font-size: 22px;
+  min-height: 56px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+}
+
+.alert input[type="checkbox"] {
+  margin-right: 15px;
+  border: 2px solid #898989;
+  display: block;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -o-appearance: none;
+  height: 17px;
+  width: 17px;
+}
+
+.alert input[type="checkbox"]:checked:after {
+  font-family: 'FontAwesome';
+  content: '\f00c';
+  position: absolute;
+  color: #505050;
+  font-size: 14px;
+
+}
+
+.alert span {
+  display: block;
+  margin-top: -25px;
+  margin-left: 30px;
+}
+
+.alert input[type="checkbox"]:focus {
+  outline: none;
+}
+
+.high-list {
+  background-color: rgba(255, 0, 0, 0.1);
+  -webkit-transition: 500ms;
+  transition: 900ms;
+}
+
+.medium-list {
+  background-color: rgba(255,165,0,0.1);
+  -webkit-transition: 500ms;
+  transition: 900ms;
+}
+
+.low-list {
+  background-color: rgba(0,128,0,0.1);
+  -webkit-transition: 500ms;
+  transition: 900ms;
+}
+
+.edit-delete {
+  color: #898989;
+  position: absolute;
+  top: 10px;
+  right: 13px;
+}
+
+.edit-delete button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.edit-delete button:first-child {
+  padding: 1px 10px 2px 0px;
+}
+
+.edit-delete button:last-child {
+  padding: 1px 0px 2px 0px;
+}
+
+.edit-delete button:hover {
+  color: #282828;
+  -webkit-transition: color 400ms;
+  transition: color 400ms;
+}
+
+.edit-delete button:focus {
+outline: none;
+}
+
+.edit-box {
+  background: #fdfabf;
+  padding: 20px 25px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+  border-bottom-right-radius: 70px 15px;
+  position: relative;
+}
+.edit-box textarea {
+  max-height: 130px;
+}
+
+.edit-box:after {
+  content: "";
+ position:absolute;
+ z-index:-1;
+ right:-0px; bottom:20px;
+ width:200px;
+ height: 25px;
+ background: rgba(0,0,0,0.2);
+ box-shadow:2px 15px 5px rgba(0,0,0,0.40);
+-moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+-webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+     -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+    -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+        transform: matrix(-1, -0.1, 0, 1, 0, 0);
+}
+
+.bottom {
+  display: none;
+}
+
+@media all and (max-width:900px) {
+  .container {
+    padding: 10px 0px 0px;
+  }
+  .banner {
+    position: relative;
+    z-index: 1;
+    margin-top: 0px;
+    padding: 5px 15px 0;
+  }
+  .banner h1 {
+    font-size: 40px;
+  }
+  .banner p {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 20px 5px 0px;
+  }
+  .to-do {
+    padding-top: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+  #sticky-note {
+    width: 360px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    height: 360px;
+    margin-top: 0;
+
+  }
+
+  .fixed-note {
+    position: fixed;
+  }
+
+  .list > div#sticky-note {
+    margin: 10px 0;
+  }
+
+  .fa {
+    margin-right: 0px;
+  }
+
+.add-new {
+    width: 220px;
+    top: 73px;
+    left: 68px;
+}
+
+.top {
+  display: none;
+}
+  textarea {
+    font-size: 20px;
+    max-height:80px;
   }
 
   #priorities {
     font-size: 13px;
-    font-style: italic;
   }
+
   .high {
-    width: 27%;
-    display: inline-block;
+    color:  rgb(255,0,0);
+    margin-right: 10px;
   }
-  .medium, .low {
-   display: inline-block;
-   width: 33.3%;
+
+  .medium {
+    color:  rgb(255,165,0);
+    margin-right: 10px;
+  }
+
+  .right {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .add-button, .calculate-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .add, .calculate {
+    font-size: 14px;
+    padding: 3px 9px;
+    border-radius: 20px;
+
+  }
+
+  .add span, .calculate span {
+    display: none;
+  }
+
+  .add:hover, .calculate:hover {
+    font-size: 14px;
+  }
+
+  .date-title {
+    z-index: 1;
+    opacity: 1;
+    font-size: 14px;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    max-width: 500px;
+    min-width: 320px;
+    margin-bottom: 0px;
+  }
+
+  .list {
+    box-sizing: border-box;
+    // overflow-y: auto;
+    width: 100%;
+    position: relative;
+    padding: 0 15px 55px;
+  }
+
+  .edit-delete {
+    font-size: 20px;
+  }
+.edit-box {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  box-shadow: none;
+  padding: 15px 15px 20px;
+}
+  .alert {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    color: #505050;
+    font-size: 18px;
+    min-height: 45px;
+    padding: 10px 60px 10px 10px;
+    margin-bottom: 10px;
+    box-shadow: none;
+    position: relative;
+  }
+
+  .alert span {
+    margin-top: -18px;
+    margin-left: 25px;
+  }
+
+
+  .bottom {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 50px
+  }
+
+  .bottom .fa {
+    margin-right: 5px;
+
+  }
+
+  .alert input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+  }
 }

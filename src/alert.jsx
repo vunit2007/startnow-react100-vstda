@@ -4,10 +4,10 @@ const EditScreen = props => {
   console.log(props.allTodoProperties);
   return (
     <div>
-      <div className="editBox">
+      <div className="edit-box">
         <h4 className="card-title">Description</h4>
-        <textarea cols="40" rows="5" name="myname" defaultValue={props.allTodoProperties.text} onChange={props.changedText}/> 
-       
+        <textarea cols="40" rows="5" name="myname" defaultValue={props.allTodoProperties.text} onChange={props.changedText}/>
+
 
         <h4 className="card-title">How much of a priority is this?</h4>
 
@@ -19,6 +19,7 @@ const EditScreen = props => {
                 name="priority"
                 value="high"
                 className="form-check-input"
+                checked="checked"
                 defaultChecked={
                   //If todo priority is high, make sure this one is checked
                   (props.allTodoProperties.priority === 'high' ? 'checked' : '')
@@ -59,10 +60,9 @@ const EditScreen = props => {
             </label>
           </div>
         </div>
-        <br />
-        <div className="calculateClass">
-          <button type="calculate" name="submit" onClick={props.handleSaved}>
-            Save
+        <div className="calculate-button">
+          <button type="calculate" className="calculate" name="submit" onClick={props.handleSaved}>
+          <i className="fa fa-arrow-circle-down" /><span>Save</span>
           </button>
         </div>
       </div>
@@ -78,7 +78,7 @@ class Alert extends Component {
       newText: "",
       newPriority: "",
     };
-    
+
     this.handleEdit = this.handleEdit.bind(this);
     this.handleSaved = this.handleSaved.bind(this);
     this.changedText = this.changedText.bind(this);
@@ -93,7 +93,7 @@ class Alert extends Component {
   handleSaved(e) {
     //this.props.onEdit(this.props.todoId, this.state);
     this.props.onSaved(this.props.todoId, this.state.newText, this.state.newPriority)
-  
+
   }
 
   handleDelete(e) {
@@ -116,11 +116,11 @@ class Alert extends Component {
   render() {
     let priority = null;
     if (this.props.todo.priority === "medium") {
-      priority = "alert-warning";
+      priority = "medium-list";
     } else if (this.props.todo.priority === "high") {
-      priority = "alert-danger";
+      priority = "high-list";
     } else {
-      priority = "alert-success";
+      priority = "low-list";
     }
 
     if (this.props.todo.isEditing === true) {
@@ -129,21 +129,22 @@ class Alert extends Component {
       return (
         <div>
           <div className={`alert ${priority}`} role="alert" id="success">
-            <p>
               {" "}
-              <input type="checkbox" />
-              {this.props.todo.text}
+              <input type="checkbox" /><span>
+              {this.props.todo.text}</span>
+              <div className="edit-delete">
               <button
-                className="btn btn-primary"
                 type="button"
                 onClick={this.handleEdit}
               >
-                Edit
+              <i className="fa fa-pencil" aria-hidden="true"></i>
               </button>
-              <button className="btn btn-primary" type="button" onClick={this.handleDelete} >
-                Delete
+              <button
+              type="button"
+              onClick={this.handleDelete} >
+              <i className="fa fa-trash-o" aria-hidden="true"></i>
               </button>
-            </p>
+              </div>
           </div>
         </div>
       );
