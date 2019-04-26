@@ -1,1 +1,1 @@
-This project is a simple and easy to use to do app that lets users create tasks, edit tasks, and delete tasks.
+Seize The Day (VSTDA) is a simple and easy to use to do app that lets users create tasks, edit tasks, and delete tasks.
