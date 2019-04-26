@@ -1,1 +1,1 @@
-This project is a simple to do app that lets users create tasks and be able to edit and delete them. I am using React to create this project. 
+This project is a simple and easy to use to do app that lets users create tasks, edit tasks, and delete tasks.
