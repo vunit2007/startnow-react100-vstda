@@ -1,244 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
-@font-face {
-  font-family: 'FontAwesome';
-  src: url('your/path/fontawesome-webfont.eot?v=4.7.0');
-  src: url('your/path/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
-    url('your/path/fontawesome-webfont.woff?v=4.7.0') format('woff'),
-    url('your/path/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+/****** GLOBAL *********/
 
 body {
-  background: url(../img/paper-bg-b.png);
+  margin: 0;
+  background: url(../img/paper-bg1.png) fixed;
   background-size: cover;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-size: 16px;
 }
-
 * {
   box-sizing: border-box;
 }
-
-.container {
-  width: 100%;
-  padding: 25px 20px 0;
-}
-
-h4 {
-  font-size: 16px;
+h6 {
   color: #898989;
-  font-family: 'Raleway', sans-serif;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-input[type="radio"] {
-  margin: 0px 4px 0px 0px;
-}
-
-strong + small {
-    display: block;
-}
-
-.banner {
-  margin-top: 15px;
-  margin-bottom: 2px;
-}
-
-.banner h1 {
-  font-size: 75px;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  color: #fdfabf;
-  letter-spacing: 4px;
-  margin: 0;
-  text-shadow:
-      3px 3px 0 #898989,
-    -1px -1px 0 #898989,
-     1px -1px 0 #898989,
-     -1px 1px 0 #898989,
-      1px 1px 0 #898989;
-}
-
-.banner p {
   font-size: 16px;
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
-  font-weight: 100;
-  color: #505050;
-  letter-spacing: 1px;
-  line-height: 50px;
 }
-
-.to-do {
+a {
+  font-size: 14px;
+  color: #898989;
+  text-decoration: underline;
+  font-weight: 100;
+}
+a:hover,
+a:active,
+.add:hover,
+.save:hover,
+.edit-delete button:hover {
+  color: #282828;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  text-decoration: none;
+}
+.note-wrapper {
   display: flex;
   justify-content: center;
-  padding-top: 40px;
 }
-
-.left {
-  width: 500px;
+.box-wrapper {
+  margin-bottom: 20px;
 }
-#sticky-note {
-background: url(../img/sticky-notes.png);
-background-size: cover;
-width: 500px;
-flex: 0 1 500px;
-height: 475px;
-position: fixed;
-top: 160px;
-z-index: 3;
-
-}
-.add-new {
-  padding-left: 3px;
-  padding-right: 3px;
-  padding-bottom: 3px;
-  width: 270px;
-  position: absolute;
-  top: 120px;
-  left: 110px;
-}
-
-textarea {
-  background: transparent;
-  font-family: 'Gloria Hallelujah';
-  outline: none;
-  border: none;
-  max-height: 125px;
-  min-height: 50px;
-  font-size: 22px;
-  width: 100%;
-  color: #505050;
-}
-
-textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  opacity: 0.3;
-}
-textarea::-moz-placeholder { /* Firefox 19+ */
-  opacity: 0.3;
-}
-textarea:-ms-input-placeholder { /* IE 10+ */
-  opacity: 0.3;
-}
-textarea:-moz-placeholder { /* Firefox 18- */
-  opacity: 0.3;
-}
-
-.add-button, .calculate-button {
+.add-button,
+.save-button {
   display: flex;
   justify-content: flex-end;
-  margin-top: 15px;
 }
-
-.add, .calculate {
-  font-family: 'Raleway', sans-serif;
-  text-transform: lowercase;
-  display: block;
-  padding: 4px 18px;
-  color :#898989;
-  background: transparent;
-  font-size: 16px;
-  border: 2px solid #898989;
-  opacity: .7;
-  -webkit-box-shadow: 0 8px 6px -6px #505050;
-  -moz-box-shadow: 0 8px 6px -6px #505050;
-       box-shadow: 0 8px 6px -6px #505050;
-}
-
-.add:hover, .calculate:hover {
-  transition: 400ms;
-  border: 2px solid #282828;
-  color: #282828;
-  font-size: 16px;
-}
-
-.add:focus, .calculate:hover {
+textarea,
+button,
+button:focus,
+button:hover,
+input,
+input:focus {
   outline: none;
 }
-
-.fa {
-  margin-right: 7px;
+.form-check {
+  display: flex;
+  font-family: "Gloria Hallelujah", cursive;
+  text-transform: uppercase;
+  justify-content: space-between;
+  max-width: 300px;
 }
-
-.top {
-  font-size: 14px;
-  text-decoration: none;
-  bottom: 17px;
-  left: 266px;
-  position: absolute;
-  transform: rotate(2deg);
-    /* Safari */
-    -webkit-transform: rotate(2deg);
-    /* Firefox */
-    -moz-transform: rotate(2deg);
-    /* IE */
-    -ms-transform: rotate(2deg);
-    /* Opera */
-    -o-transform: rotate(2deg);
-}
-
-a {
-  color: #898989;
-  font-family: 'Raleway', sans-serif;
-}
-
-a:hover {
-  color: #282828;
-  -webkit-transition: 200ms;
-  transition: 200ms;
-  text-decoration: none;
-}
-
-a:active {
-  color: #505050;
-  -webkit-transition: 200ms;
-  transition: 200ms;
-  text-decoration: none;
-}
-
-.right {
-  flex: 0 1 55%;
-  padding: 0 30px;
-}
-
-  .date-title {
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    text-align: center;
-    color: #505050;
-    letter-spacing: 1px;
-    padding: 18px 0px 18px 20px;
-    background: url(../img/pencil4.png) no-repeat;
-    background-size: 100% 100%;
-    opacity: .8;
-    margin-bottom: 10px;
-    min-width: 415px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 600;
-
-}
-
-
-  // .toDoBoxBottomRight {
-  //   font-size: 16px;
-  //   font-family: 'Gloria Hallelujah';
-  //   padding-left: 3px;
-  //   padding-right: 3px;
-  //   padding-bottom: 3px;
-  // }
-
-#priorities {
-    font-size: 16px;
-    display: flex;
-    font-family: 'Gloria Hallelujah', cursive;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-#priorities input[type="radio"] {
+input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -247,57 +68,22 @@ a:active {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  outline: none;
   border: 2px solid #898989;
-  padding: 0px !important;
-  margin-top: 0px;
   cursor: pointer;
-  padding: 2px;
 }
-
-#priorities input[type="radio"]:checked:before {
+input[type="radio"]:checked:before {
   background: #505050;
 }
-
-#priorities input[type="radio"]:before {
-  content: '';
+input[type="radio"]:before {
+  content: "";
   display: block;
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-
-.high {
-  color:  rgb(255,0,0);
-  margin-right: 27px;
-}
-
-.medium {
-  color:  rgb(255,165,0);
-  margin-right: 27px;
-}
-
-.low {
-  color:rgb(0,128,0);
-}
-
-.list {
-  padding: 0px 30px;
-  margin-right: 20px;
-}
-.alert {
-  color: #505050;
-  font-family: 'Gloria Hallelujah', cursive;
-  letter-spacing: 1px;
-  position: relative;
-  padding: 15px 85px 15px 15px;
-  font-size: 22px;
-  min-height: 56px;
-  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
-}
-
-.alert input[type="checkbox"] {
-  margin-right: 15px;
+input[type="checkbox"] {
+  margin: 5px 15px 0 0;
+  padding: 6px;
   border: 2px solid #898989;
   display: block;
   cursor: pointer;
@@ -305,288 +91,372 @@ a:active {
   -moz-appearance: none;
   appearance: none;
   -o-appearance: none;
-  height: 17px;
-  width: 17px;
+  height: 14px;
+  width: 14px;
 }
-
-.alert input[type="checkbox"]:checked:after {
-  font-family: 'FontAwesome';
-  content: '\f00c';
+input[type="checkbox"]:checked:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
   position: absolute;
   color: #505050;
-  font-size: 14px;
-
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: -6px;
+}
+.fas,
+.far {
+  margin-right: 5px;
 }
 
+/****** HEADER *********/
+
+header {
+  margin: 30px 0;
+  text-align: center;
+}
+header h1 {
+  font-size: 70px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  color: #fdfabf;
+  text-shadow: 3px 3px 0 #898989, -1px -1px 0 #505050, 1px -1px 0 #505050,
+    -1px 1px 0 #505050, 1px 1px 0 #505050;
+}
+header p {
+  font-size: 16px;
+  font-weight: 100;
+  color: #505050;
+  padding: 10px 30px 0;
+}
+.gray-italic {
+  color: #898989;
+  font-style: italic;
+  font-weight: bold;
+}
+.green-bold {
+  color: rgb(0, 128, 0);
+  font-weight: bold;
+}
+
+/****** ADD NOTE SECTION *********/
+
+section {
+  width: 500px;
+}
+.add-note {
+  background: url(../img/sticky-note.png);
+  background-size: cover;
+  position: fixed;
+  top: 215px;
+  width: 500px;
+  height: 495px;
+  z-index: 3;
+}
+.new {
+  position: absolute;
+  top: 120px;
+  left: 110px;
+  width: 275px;
+}
+textarea {
+  background: transparent;
+  max-height: 115px;
+  width: 100%;
+  font-family: "Gloria Hallelujah", cursive;
+  color: #505050;
+  font-size: 22px;
+  border: none;
+}
+::-webkit-input-placeholder {
+  opacity: 0.3;
+}
+::-moz-placeholder {
+  opacity: 0.3;
+}
+:-ms-input-placeholder {
+  opacity: 0.3;
+}
+:-moz-placeholder {
+  opacity: 0.3;
+}
+.add,
+.save {
+  color: #898989;
+  font-weight: 600;
+  text-transform: lowercase;
+  background: transparent;
+  padding: 8px 18px;
+  opacity: 0.7;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  -moz-box-shadow: 2px 2px 2px #505050;
+  box-shadow: 2px 2px 2px #505050;
+}
+.add:hover,
+.save:hover {
+  border: 1px solid #282828;
+  opacity: 0.9;
+}
+.fa-plus {
+  font-size: 85%;
+}
+.top {
+  position: absolute;
+  left: 282px;
+  bottom: 17px;
+  transform: rotate(3deg);
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+}
+
+/****** PIN NOTE SECTION *********/
+
+article {
+  margin: 25px 10px 0px 40px;
+  width: 550px;
+}
+.date {
+  text-align: center;
+  color: #898989;
+  font-weight: 600;
+  background: url(../img/pencil4.png) no-repeat;
+  background-size: 100% 100%;
+  margin: 0 0 17px 0;
+  padding: 18px 0px 18px 20px;
+  min-width: 415px;
+}
+.list {
+  padding: 0px 50px;
+}
+.blank-list {
+  background: url(../img/question-gray.png) #fdfabf no-repeat center;
+  background-size: contain;
+  padding: 20px 25px 25px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  border-bottom-right-radius: 70px 15px;
+  position: relative;
+  height: 340px;
+}
+.blank-list:after,
+.edit-box:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0px;
+  bottom: 20px;
+  width: 200px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.4);
+  -moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  transform: matrix(-1, -0.1, 0, 1, 0, 0);
+}
+.alert {
+  color: #505050;
+  font-size: 18px;
+  font-family: "Gloria Hallelujah", cursive;
+  padding: 15px 75px 15px 15px;
+  display: flex;
+  min-height: 56px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
 .alert span {
   display: block;
-  margin-top: -25px;
-  margin-left: 30px;
 }
-
-.alert input[type="checkbox"]:focus {
-  outline: none;
+.high {
+  color: rgb(255, 0, 0);
+  margin-right: 27px;
 }
-
+.medium {
+  color: rgb(255, 165, 0);
+  margin-right: 27px;
+}
+.low {
+  color: rgb(0, 128, 0);
+}
 .high-list {
   background-color: rgba(255, 0, 0, 0.1);
-  -webkit-transition: 500ms;
-  transition: 900ms;
 }
-
 .medium-list {
-  background-color: rgba(255,165,0,0.1);
-  -webkit-transition: 500ms;
-  transition: 900ms;
+  background-color: rgba(255, 165, 0, 0.1);
 }
-
 .low-list {
-  background-color: rgba(0,128,0,0.1);
-  -webkit-transition: 500ms;
-  transition: 900ms;
+  background-color: rgba(0, 128, 0, 0.1);
 }
-
 .edit-delete {
-  color: #898989;
   position: absolute;
-  top: 10px;
-  right: 13px;
+  top: 12px;
+  right: 2px;
 }
-
 .edit-delete button {
   background: none;
   border: none;
-  outline: none;
+  color: #898989;
 }
-
-.edit-delete button:first-child {
-  padding: 1px 10px 2px 0px;
-}
-
-.edit-delete button:last-child {
-  padding: 1px 0px 2px 0px;
-}
-
-.edit-delete button:hover {
-  color: #282828;
-  -webkit-transition: color 400ms;
-  transition: color 400ms;
-}
-
-.edit-delete button:focus {
-outline: none;
-}
-
 .edit-box {
   background: #fdfabf;
   padding: 20px 25px 25px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+  margin: 0 0 20px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   border-bottom-right-radius: 70px 15px;
   position: relative;
 }
-.edit-box textarea {
-  max-height: 130px;
-}
-
-.edit-box:after {
-  content: "";
- position:absolute;
- z-index:-1;
- right:-0px; bottom:20px;
- width:200px;
- height: 25px;
- background: rgba(0,0,0,0.2);
- box-shadow:2px 15px 5px rgba(0,0,0,0.40);
--moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
--webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-     -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-    -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-        transform: matrix(-1, -0.1, 0, 1, 0, 0);
-}
-
 .bottom {
   display: none;
 }
 
-@media all and (max-width:900px) {
-  .container {
-    padding: 10px 0px 0px;
-  }
-  .banner {
-    position: relative;
-    z-index: 1;
-    margin-top: 0px;
-    padding: 5px 15px 0;
-  }
-  .banner h1 {
-    font-size: 40px;
-  }
-  .banner p {
-    font-size: 14px;
-    line-height: 18px;
-    padding: 20px 5px 0px;
-  }
-  .to-do {
-    padding-top: 0;
+/****** MOBILE *********/
+
+@media all and (max-width: 991px) {
+  .note-wrapper {
     flex-direction: column;
+  }
+  section {
     width: 100%;
   }
-  #sticky-note {
-    width: 360px;
+  .add-note {
     position: relative;
-    top: 0px;
-    left: 0px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-left: auto;
-    margin-right: auto;
-    height: 360px;
-    margin-top: 0;
-
+    top: 0;
+    margin: 0 auto;
+    z-index: 1;
   }
-
-  .fixed-note {
-    position: fixed;
-  }
-
-  .list > div#sticky-note {
-    margin: 10px 0;
-  }
-
-  .fa {
-    margin-right: 0px;
-  }
-
-.add-new {
-    width: 220px;
-    top: 73px;
-    left: 68px;
-}
-
-.top {
-  display: none;
-}
-  textarea {
-    font-size: 20px;
-    max-height:80px;
-  }
-
-  #priorities {
-    font-size: 13px;
-  }
-
-  .high {
-    color:  rgb(255,0,0);
-    margin-right: 10px;
-  }
-
-  .medium {
-    color:  rgb(255,165,0);
-    margin-right: 10px;
-  }
-
-  .right {
-    padding: 0;
-    height: 100%;
-    width: 100%;
-  }
-
-  .left {
-    width: 100%;
-  }
-
-  .add-button, .calculate-button {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 5px;
-    margin-right: 5px;
-  }
-
-  .add, .calculate {
-    font-size: 14px;
-    padding: 3px 9px;
-    border-radius: 20px;
-
-  }
-
-  .add span, .calculate span {
+  .top {
     display: none;
   }
-
-  .add:hover, .calculate:hover {
-    font-size: 14px;
+  article {
+    margin: 25px auto 60px;
   }
-
-  .date-title {
-    z-index: 1;
-    opacity: 1;
-    font-size: 14px;
+  .date {
     position: fixed;
-    margin-left: auto;
-    margin-right: auto;
     left: 0;
     right: 0;
     bottom: -6px;
+    margin: 0 auto;
     max-width: 500px;
     min-width: 320px;
-    margin-bottom: 0px;
+    z-index: 2;
   }
-
-  .list {
-    box-sizing: border-box;
-    // overflow-y: auto;
-    width: 100%;
-    position: relative;
-    padding: 0 15px 55px;
-  }
-
-  .edit-delete {
-    font-size: 20px;
-  }
-.edit-box {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  box-shadow: none;
-  padding: 15px 15px 20px;
-}
-  .alert {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px;
-    color: #505050;
-    font-size: 18px;
-    min-height: 45px;
-    padding: 10px 60px 10px 10px;
-    margin-bottom: 10px;
-    box-shadow: none;
-    position: relative;
-  }
-
-  .alert span {
-    margin-top: -18px;
-    margin-left: 25px;
-  }
-
-
   .bottom {
     display: flex;
     justify-content: center;
     font-size: 14px;
     text-decoration: none;
-    letter-spacing: 1px;
-    line-height: 50px
+    line-height: 50px;
   }
+}
 
-  .bottom .fa {
-    margin-right: 5px;
-
+@media all and (max-width: 600px) {
+  h4 {
+    font-size: 14px;
   }
+  header h1 {
+    font-size: 48px;
+  }
+  header p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .add-note {
+    height: 360px;
+    width: 360px;
+    z-index: 2;
+  }
+  .new {
+    top: 78px;
+    left: 68px;
+    width: 220px;
+  }
+  textarea {
+    font-size: 20px;
+    max-height: 65px;
+  }
+  .form-check {
+    font-size: 13px;
+  }
+  .add span,
+  .save span {
+    display: none;
+  }
+  .add .fas,
+  .save .fas {
+    margin-right: 0px;
+  }
+  .add,
+  .save,
+  .add:hover,
+  .save:hover {
+    font-size: 14px;
+    padding: 3px 10px;
+  }
+  article {
+    width: 415px;
+  }
+  .list {
+    padding: 0 15px;
+  }
+  .alert {
+    margin: 0 auto 20px;
+    max-width: 600px;
+    color: #505050;
+    position: relative;
+  }
+  .edit-box {
+    margin: 0 auto 20px;
+    padding: 15px 15px 20px;
+  }
+  .edit-delete {
+    font-size: 20px;
+  }
+}
 
-  .alert input[type="checkbox"] {
-    height: 15px;
-    width: 15px;
+@media all and (max-width: 445px) {
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  h4 {
+    margin-bottom: 5px;
+  }
+  header h1 {
+    font-size: 34px;
+    letter-spacing: 3px;
+  }
+  .add-note {
+    width: 315px;
+    height: 313px;
+  }
+  .new {
+    top: 67px;
+    left: 55px;
+    width: 200px;
+  }
+  .form-check-input {
+    margin-left: -1rem;
+  }
+  textarea {
+    font-size: 18px;
+    max-height: 55px;
+  }
+  article {
+    width: 320px;
+    margin: 20px auto 50px;
+  }
+  .blank-list {
+    height: 240px;
+  }
+  .day {
+    display: none;
+  }
+  .date {
+    padding: 15px 0px 15px 20px;
+  }
+  .box-wrapper {
+    margin-bottom: 15px;
   }
 }
